@@ -12,6 +12,8 @@ namespace MeetMirko
     /// </summary>
     public partial class SendResultControl : UserControl
     {
+        public EventHandler MessageSent;
+
         private const string MYMAIL = "mirko_collura89@hotmail.it";
         private const string MYNUMBER = "3270166633";
         private const string FAKEMAIL = "meet.mirko@gmail.com";
@@ -56,6 +58,7 @@ namespace MeetMirko
                 {
                     gmailClient.Send(msg);
                     MessageBox.Show("Message sent correctly!", string.Empty, MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageSent?.Invoke(this, new EventArgs());
                 }
                 catch (Exception ex)
                 {

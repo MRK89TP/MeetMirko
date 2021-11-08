@@ -26,6 +26,7 @@ namespace MeetMirko
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             _wantMeetControl.YesClicked += OnYesClicked;
+            _sendResultControl.MessageSent += OnYesClicked;
 
             ChangeControl();
         }
